@@ -60,7 +60,10 @@ export default function Voting() {
 
   // useEffect(() => {}, [add]);
   // console.log(add);
-  console.log(address);
+  async function successResult() {
+    const resu = await result();
+    document.getElementById("result").innerHTML = resu;
+  }
 
   return (
     <div>
@@ -172,7 +175,7 @@ export default function Voting() {
             color="blue"
             onClick={async function () {
               console.log("clicked button");
-              await result();
+              await successResult();
             }}
             text="Result"
             theme="colored"
